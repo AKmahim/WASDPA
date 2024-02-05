@@ -5371,3 +5371,17 @@ donate
 /* ==========================
 donate
 ============================*/
+
+
+/* ============================================================= my css ======================  */
+.report-card{
+  margin-bottom: 30px;
+}
+.report-card ul li{ 
+  list-style-type: disc;
+}
+.report-card ul li a{
+  /* color: blue; */
+  padding: 10px 10px;
+  margin-left: 20px;
+}
