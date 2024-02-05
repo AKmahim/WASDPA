@@ -980,8 +980,8 @@ section.news_letter {
 
 .banner-content-wrapper-inner h2{
   font-weight: 400;
-  font-size: 72px;
-  line-height: 82px;
+  font-size: 42px;
+  line-height: 52px;
   color: #ffffff;
   opacity: 0;
   transform: translateY(50px);
@@ -1593,6 +1593,10 @@ div#skills-section {
 
 .mission .common-title{
   margin-bottom: 50px;
+}
+.mission .common-title h3{
+  font-size: 28px;
+  line-height: 30px;
 }
 
 .mission-container{
