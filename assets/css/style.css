@@ -264,7 +264,7 @@ header.main-header.style-three .sticky-header .logo-box .logo img{
 .main-menu .navigation > li > .megamenu{
   position:absolute;
   top:100%;
-  width:250px;
+  width:450px;
   background: #ffffff;
   z-index:100;
   -webkit-transition: all 0.2s ease-out;

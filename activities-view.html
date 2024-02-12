@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Screen PDF Reader</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #pdf-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    #pdf-viewer {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="pdf-container">
+    <iframe id="pdf-viewer" src="" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    const pdfViewer = document.getElementById('pdf-viewer');
+    const pdfContainer = document.getElementById('pdf-container');
+
+    // Function to toggle full screen
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        pdfContainer.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Function to load PDF with specific page
+    function loadPDFWithPage(pageNumber) {
+      const urlParams = new URLSearchParams(window.location.hash.substring(1));
+      const page = urlParams.get('page') || 1;
+      pdfViewer.src = `./assets/report/Major activities of WASDPA.pdf#page=${pageNumber}`;
+    }
+
+    // Event listener to toggle full screen on double click
+    pdfViewer.addEventListener('dblclick', toggleFullScreen);
+
+    // Load PDF with page number from URL hash
+    window.addEventListener('load', () => {
+      const pageNumber = window.location.hash.substring(6); // Extracts the page number from the hash (#page=3)
+      loadPDFWithPage(pageNumber);
+    });
+  </script>
+</body>
+</html>
